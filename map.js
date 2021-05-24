@@ -1,6 +1,6 @@
 // Use the map method to solve these problems!
 
-/*
+
 Input:
 
 [
@@ -10,19 +10,20 @@ Input:
     { name: 'einstein', type: 'cat' },
 ]
 
-*/
 
-/*
+
 Output:
 
 ['spot', 'rover', 'jumpy', 'einstein']
-*/
+
 
 export function makeArrayOfNamesWithMap(arr) {
-    return [];
+    const namesArray = arr.map(array => array.name)
+
+    return namesArray;
 }
 
-/*
+
 Output:
 
 [
@@ -30,13 +31,20 @@ Output:
     { name: 'rover', isHungry: true, type: 'dog' },
     { name: 'jumpy', isHungry: true, type: 'frog' },
     { name: 'einstein', isHungry: true, type: 'cat' },
-]*/
+]
 
 export function makeArrayWithIsHungry(arr) {
-    return [];
+    const hungryArray = arr.map(item => ({
+        name: item.name,
+        isHungry: true,
+        type: item.type
+        // console.log(item);
+    }))
+
+    return hungryArray;
 }
 
-/*
+
 Output:
 
 [
@@ -44,24 +52,33 @@ Output:
     { name: 'ROVER', type: 'dog' },
     { name: 'JUMPY', type: 'frog' },
     { name: 'EINSTEIN', type: 'cat' },
-]*/
+]
 
 export function makeShoutingArray(arr) {
-    return [];
+    let shoutArray = arr.map(item => ({
+        name: item.name.toUpperCase(),
+        type: item.type
+    }))
+
+    return shoutArray;
 }
 
 
-/*
+
 
 Output:
-['spotdog', 'roverdog', 'jumpyfrog', einsteincat']
-*/
+['spotdog', 'roverdog', 'jumpyfrog', 'einsteincat']
+
 
 export function makeStringArray(arr) {
-    return [];
+    let stringArray = arr.map(item => (
+        item.name + item.type 
+    ))
+
+    return stringArray;
 }
 
-/*
+
 Output:
 
 [
@@ -81,8 +98,11 @@ Output:
         ['name', 'einstein'], 
         ['type', 'cat']
     ]
-*/
+]
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    let arrayOfArrays = arr.map(item => [
+        ['name', item.name], ['type', item.type]
+    ])
+    return arrayOfArrays;
 }
