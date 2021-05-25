@@ -1,6 +1,6 @@
 // Use the filter or find array methods to solve these problems
 
-/* 
+
 Input:
 [
     { 
@@ -50,13 +50,15 @@ Output:
         category: 'dairy'
     },
 ]
-*/
+
 
 export function getAllDairy(arr) {
-    return [];
+    let dairyFilter = arr.filter((item) => item.category === 'dairy'
+    )
+    return dairyFilter;
 }
 
-/*
+
 Output: 
 [
     { 
@@ -66,25 +68,31 @@ Output:
         category: 'fruit'
     }
 ]
-*/
+
 
 export function getAllFruitsThatCostMoreThanTwo(arr) {
-    return [];
+    const fruitsCostMoreThanTwo = arr.find(item => item.price > 2)
+
+    return [fruitsCostMoreThanTwo];
 }
 
 
-/*
+
 Output: 
+[
     { 
         id: 'cheese',
         price: 4,
         quantity: 4,
         category: 'dairy'
     },
-*/
+]
 
 export function findTheCheese(arr) {
-    return [];
+    const cheeseStandsAlone = arr.find(item => item.id === 'cheese'
+    )
+
+    return cheeseStandsAlone;
 }
 
 
