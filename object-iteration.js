@@ -1,25 +1,34 @@
 // user Object.values and Object.key to solve these problems!
 
-/*
+
 Input: 
-{
+[{
     wheels: 8,
     type: 'truck',
     goes: 'vroom',
 }
-*/
+]
 
-/*
+
 Output:
-{
+[{
     WHEELS: 8,
     TYPE: 'truck',
     GOES: 'vroom',
-}
-*/
+}]
+
 
 export function makeMoreScreamingKeys(someObject) {
-    return {};
+let screamingKeysObject = {};
+
+const keys = Object.keys(someObject)
+
+keys.forEach(key => {
+    const upperCase = key.toUpperCase();
+    screamingKeysObject[upperCase] = someObject[key]
+})
+
+return screamingKeysObject;
 }
 
 /*
